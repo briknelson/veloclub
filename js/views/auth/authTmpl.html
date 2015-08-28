@@ -1,0 +1,15 @@
+  <div class="container jumbotron" ng-hide="user">
+    <form ng-submit="login(loginUser)">
+        <p class="text-center">Login to Utah Velo Club</p>
+        <div>User e-mail address: <input type="text" ng-model="loginUser.email" class="form-control" placeholder="e-mail address..."></div>
+        <div> Password: <input type="password" ng-model="loginUser.password" class="form-control" placeholder="password"><br></div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+    <div class="container jumbotron" ng-show="user">
+      <p class="text-center">Logout of Utah Velo Club</p>
+        <div class="span7 text-center">
+            <button ng-click="logout()" class="btn btn-info">Logout</button>
+        </div>
+    </div>

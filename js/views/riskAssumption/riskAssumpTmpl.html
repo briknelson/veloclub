@@ -1,0 +1,67 @@
+<div class="container" ng-controller="riskAssumpCtrl">
+  <form name="riskAssumptionForm" ng-submit="riskSubmit(riskUser)" class="jumbotron" novalidate>
+
+      <h2 class="text-center">Thanks for your membership in the Utah Velo Club.<br>
+        <small>Please complete the Risk Assumption form and click "Submit Form" at the bottom</small></h2></p>
+
+      <div>
+         First Name: <input type="text" class="form-control" ng-model="riskUser.firstName" placeholder="First Name..." required><br>
+         Last Name: <input type="text" class="form-control" ng-model="riskUser.lastName" placeholder="Last Name..." required><br>
+         Home Phone: <input type="text" class="form-control" ng-model="riskUser.homePhone" placeholder="Home Phone..." required><br>
+         email address: <input type="text" class="form-control" ng-model="riskUser.emailAddress" placeholder="email address..." required><br>
+         comments: <input type="text" class="form-control" ng-model="riskUser.comments" placeholder="comments..."><br>
+       </div>
+
+         <br><br>
+     <h2 class="text-center">Participant Assumption of Risk</h2>
+      <p>
+          I acknowledge that cycling and snowshoeing are inherently dangerous sports and fully realize
+          the dangers of participating in bicycle rides, bicycle races, and backcountry events.  I agree
+          that it is my duty to exercise care for the protection of myself and others while participating
+          in club/team events.   I represent that I am covered under my own insurance policies to cover any
+          personal injuries to myself or which I may cause to others.  I acknowledge that by signing this
+          document, I am assuming risks, and agreeing to indemnify, hold harmless, not to sue, and release
+          from liability any other participant, ride leader, or sponsor of the Utah Velo Club.  I hereby
+          waive all claims against the Utah Velo Club, Ride Leader, sponsors, and volunteers associated
+          with the Utah Velo Club.  I hereby wave all demands and causes of action of every kind whatsoever
+          for any damages or injuries which may result from participation in any Utah Velo Club event
+          including group rides, races, and backcountry events.  I further attest that I am physically
+          fit and prepared to participate in these events and that I will wear an approved helmet and
+          protective clothing appropriate for the event.  I agree to be courteous to motorists and pedestrians
+          on the roads and trails during rides, races, and other events.  I will maintain vigilance by not
+          using ear buds or any other device that impairs hearing while on the bike.  This covers all club
+          events until the club is dissolved.
+      </p>
+    <div>
+      <div class="well">
+        <label>
+          <p>I have read the foregoing Assumption of Risk and understand, agree, and accept personal responsibility.</p>
+          <input type="checkbox" name="riskAgree" ng-model="riskUser.agreement" required>
+            I agree
+        </label><br>
+      </div>
+    </div>
+
+    <div class="well">
+      <div>
+          <p>I am at least 18 years old</p>
+            <label>
+              <input type="radio" name="age18" ng-model="riskUser.age18" value=true required>
+                Yes
+            </label><br/>
+            <label>
+              <input type="radio" name="age18" ng-model="riskUser.age18" value=false>
+                No
+            </label><br/>
+      </div>
+
+      <div name="noAge18Parental" ng-hide="riskUser.age18 == 'true'">
+        <p>Parental permission with name and address</p>
+          <input type="textarea" class="form-control" ng-model="riskUser.parentalInfo" placeholder="Parent's name, address, phone...">
+      </div>
+  </div>
+
+    <button type="submit" ng-disabled="riskAssumptionForm.$invalid" class="btn btn-primary">Submit Form</button>
+    <button class="btn btn-default" ng-click="riskReset()">Reset Form</button>
+  </form>
+</div>

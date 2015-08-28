@@ -1,0 +1,25 @@
+<div class="jumbotron container" ng-controller="calCtrl">
+
+  <h2 class="text-center">Calendar an event<br>
+    <small>Please Complete the Form</small></h2>
+
+  <form name="calEdit" ng-submit="eventSubmit(events)">
+    Date: <input type="date" class="form-control" ng-model="events.eventDate" placeholder="date">
+    Day: <select class="form-control" ng-model="events.day">
+            <option value="Sun">Sunday</option>
+            <option value="Mon">Monday</option>
+            <option value="Tues">Tuesday</option>
+            <option value="Wed">Wednesday</option>
+            <option value="Thurs">Thursday</option>
+            <option value="Fri">Friday</option>
+            <option value="Sat">Saturday</option>
+          </select>
+    Event: <input type="text" class="form-control" ng-model="events.event" placeholder="event information">
+    Location: <input type="text" class="form-control" ng-model="events.location" placeholder="location">
+    Remarks: <input type="text" class="form-control" ng-model="events.remarks" placeholder="remarks">
+    <br><button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-default" ng-click="resetForm()">Reset Form</button>
+
+  </form>
+
+</div>

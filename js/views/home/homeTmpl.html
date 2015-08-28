@@ -1,0 +1,35 @@
+<div class="container jumbotron">
+  <div class="container panel">
+    <h2 class="text-left pull-left">Utah Velo Club<br> <small>Sponsored by the Bike Peddler</small></h2>
+    <img src="img/peddlerLogo.jpg" class="img-responsive pull-right" height="150"></img>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="span5 offset5">
+      <a href="http://www.accuweather.com/en/us/american-fork-ut/84003/weather-forecast/336143" class="aw-widget-legal">
+      <!--
+      By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+      -->
+      </a>
+
+        <div id="awcc1440643668703" class="aw-widget-current"  data-locationkey="336143" data-unit="f" data-language="en-us" data-useip="false" data-uid="awcc1440643668703">
+        </div>
+
+      <script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">
+    <div>
+      <carousel interval="myInterval" no-wrap="noWrapSlides">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}" style="max-height:400px; margin:0 auto;">
+            <div class="carousel-caption">
+            </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
